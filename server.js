@@ -37,6 +37,20 @@ app.post('/signin', (req, res) => {
     }
 })
 
+app.post('/signup', (req, res) => {
+    const { name, email, password } = req.body;
+    id_incrementor = (database.users[database.users.length -1].id + 1);
+    database.users.push({
+            id: id_incrementor,
+            name: name,
+            email: email,
+            password: password,
+            entries: 0,
+            joined: new Date()
+    })
+    res.json(database.users)
+})
+
 app.listen(3000, () => {
     console.log("app is running on port 3000")
 })
