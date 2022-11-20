@@ -80,7 +80,7 @@ app.get('/profile/:id', (req, res) => {
     }
 })
 
-app.post('/image', (req, res) => {
+app.put('/image', (req, res) => {
     // req.body.entries + 1
     // res.send(users)
     const { id } = req.body;
